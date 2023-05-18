@@ -6,7 +6,7 @@ else
     VERSION=13.4
 fi
 JOBS_NUMBER=4
-POSTGIS_VERSION=3.2.0
+POSTGIS_VERSION=3.2.5dev
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -27,7 +27,7 @@ make install-world-bin
 cd ..
 
 # Build PostGIS
-curl -L -O https://download.osgeo.org/postgis/source/postgis-${POSTGIS_VERSION}.tar.gz
+curl -L -O https://postgis.net/stuff/postgis-${POSTGIS_VERSION}.tar.gz
 tar -xzvf postgis-${POSTGIS_VERSION}.tar.gz
 cd postgis-${POSTGIS_VERSION}
 ./configure --with-pgconfig=`pwd`/../src/postgresql/bin/pg_config
