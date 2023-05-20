@@ -5,6 +5,7 @@ then
 else
     VERSION=13.4
 fi
+POSTGIS_VERSION=3.2.5dev
 
 yum install -y dnf-plugins-core epel-release
 yum config-manager --set-enabled powertools
@@ -18,3 +19,11 @@ make -j 4 world-bin
 make install-world-bin
 cd ..
 
+# Build PostGIS
+curl -L -O https://postgis.net/stuff/postgis-${POSTGIS_VERSION}.tar.gz
+tar -xzvf postgis-${POSTGIS_VERSION}.tar.gz
+cd postgis-${POSTGIS_VERSION}
+./configure --with-pgconfig=`pwd`/../src/postgresql/bin/pg_config
+make -j ${JOBS_NUMBER}
+make install
+cd ..
