@@ -10,8 +10,8 @@ POSTGIS_VERSION=3.2.5dev
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt update
-apt install -y zlib1g-dev libreadline-dev libossp-uuid-dev libxml2-dev \
+sudo apt-get update
+sudo apt-get install -y zlib1g-dev libreadline-dev libossp-uuid-dev libxml2-dev \
                     libxslt1-dev curl make gcc pkg-config libgeos-dev libxml2-utils \
                     libjson-c-dev proj-bin g++ libsqlite3-dev libtiff-dev \
                     libcurl4-gnutls-dev libprotobuf-c-dev libgdal-dev libsfcgal-dev \
