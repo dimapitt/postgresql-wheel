@@ -9,6 +9,7 @@ JOBS_NUMBER=4
 POSTGIS_VERSION=3.2.5dev
 
 export DEBIAN_FRONTEND=noninteractive
+update && apt install sudo
 
 sudo apt-get update
 sudo apt-get install -y zlib1g-dev libreadline-dev libossp-uuid-dev libxml2-dev \
